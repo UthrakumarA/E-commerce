@@ -5,6 +5,7 @@ import CartList from "./pages/CartList";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Help from "./pages/Help";
+import ProductDetails from "./pages/ProductDetails";
 
 const Navbar=()=> {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const AppRouter=()=> {
   return (
     <>
       <center><u><b><h1 className="logo">Welcome To Vicky Anna E-Commerce Website</h1></b></u></center>
-      <br />
+      
       <Navbar />
 
       <Routes>
@@ -39,6 +40,7 @@ const AppRouter=()=> {
         <Route path="/about" element={<About />}/>
         <Route path="/contact" element={<Contact />}/>
         <Route path="/help" element={<Help />}/>
+        <Route path="/ProductDetails" element={<ProductDetails/>}/>
       </Routes>
     </>
   );
