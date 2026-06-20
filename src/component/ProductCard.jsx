@@ -4,7 +4,7 @@ const ProductCard=({ product })=>
   const navigate= useNavigate();
    return (
     <div className="card" onClick={()=>navigate(`/products/${product.id}`)}>
-      <img src={product.image} alt={product.title}/>
+      <img src={product.image} alt={product.title} loading="lazy"/>
 
       <h3>{product.title}</h3>
       
