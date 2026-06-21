@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import products from "../data/products";
+import "../ProductDetail.css";
 
 function ProductDetails() {
 
@@ -12,15 +13,25 @@ function ProductDetails() {
     return <h2>Product Not Found</h2>;
   }
 
-  return (
-    <div>
-      <img src={product.image} alt={product.title} width="300"/>
-      <h1>{product.title}</h1> 
+return (
+  <div className="details-page">
+
+    <img className="details-image"
+      src={product.image}
+      alt={product.title}
+    />
+
+    <div className="details-content">
+
+      <h1>{product.title}</h1>
       <h2>₹{product.price}</h2>
       <p>{product.description}</p>
-      <button>Add To Cart</button>
+      <button onClick={(e) => {e.stopPropagation(); addToCart(product);}}>Add To Cart</button>
+
     </div>
-  );
+
+  </div>
+);
 }
 
 export default ProductDetails;

@@ -161,7 +161,7 @@ span:hover {
   margin-bottom: 20px;
 }
 
-/* OVERLAY */
+
 
 .overlay {
   position: fixed;
@@ -170,7 +170,7 @@ span:hover {
   z-index: 1999;
 }
 
-/* SIDEBAR */
+
 
 .filter-sidebar {
   position: fixed;
@@ -241,7 +241,7 @@ span:hover {
   background: #ddd;
 }
 
-/* PAGINATION */
+
 
 .pagination {
   display: flex;

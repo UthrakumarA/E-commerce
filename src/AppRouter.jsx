@@ -7,8 +7,10 @@ import Contact from "./pages/Contact";
 import Help from "./pages/Help";
 import ProductDetails from "./pages/ProductDetails";
 import './index.css';
+import { useCart } from "./context/Cardcontext";
 
 const Navbar=()=> {
+  const {cartCount}=useCart();
   const navigate = useNavigate();
 
   return (
@@ -17,7 +19,7 @@ const Navbar=()=> {
       <div className="nav-links">
         <span onClick={() => navigate("/")}>Home</span>
         <span onClick={() => navigate("/products")}>Products</span>
-        <span onClick={() => navigate("/cart")}>Cart List</span>
+        <span onClick={() => navigate("/cart")}>Cart List ({cartCount})</span>
         <span onClick={() => navigate("/about")}>About</span>
         <span onClick={() => navigate("/contact")}>Contact</span>
         <span onClick={() => navigate("/help")}>Help</span>

@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/Cardcontext";
 const ProductCard=({ product })=>
 {
+  const {addToCart}= useCart();
   const navigate= useNavigate();
    return (
     <div className="card" onClick={()=>navigate(`/products/${product.id}`)}>
@@ -10,7 +12,7 @@ const ProductCard=({ product })=>
       
       <p>₹{product.price}</p>
 
-      <button>Add To Cart</button>
+      <button onClick={(e) => {e.stopPropagation(); addToCart(product);}}>Add To Cart</button>
     </div>
   );
 }
