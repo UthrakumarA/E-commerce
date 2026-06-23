@@ -1,5 +1,5 @@
-import { useCart } from "../context/Cardcontext";
-import "../CartList.css";
+import { useCart } from "../component/Cardcontext";
+import "../CSS/CartList.css";
 
 const CartList = () => {
 
@@ -61,7 +61,7 @@ const CartList = () => {
 
       <div className="cart-total">
         <h2>
-          Total : ₹{cartTotal}
+          Total Price : ₹{cartTotal}
         </h2>
       </div>
     </>

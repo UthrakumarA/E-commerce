@@ -1,5 +1,6 @@
 import products from "../data/products";
 import ProductCard from "../component/ProductCard";
+import "../CSS/index.css";
 
 function Home() {
   return (
@@ -12,10 +13,10 @@ function Home() {
         </p>
       </section>
 
-      <h2>Featured Products</h2>
+      <h2 style={{color:"#2AA1EC"}}>Suggestion Products:</h2><br />
 
       <div className="grid">
-        {products.slice(0, 3).map((product) => (
+        {products.slice(0, 4).map((product) => (
           <ProductCard
             key={product.id}
             product={product}

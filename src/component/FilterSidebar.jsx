@@ -1,3 +1,5 @@
+import "../CSS/Filter.css";
+
 const FilterSidebar = ({
   isOpen,
   onClose,
@@ -24,9 +26,9 @@ const FilterSidebar = ({
         }`}
       >
         <div className="sidebar-header">
-          <h2>Filters</h2>
+          <h2 style={{color:"#2AA1EC"}}>Filters</h2>
 
-          <button
+          <button style={{color:"#2AA1EC"}}
             className="close-btn"
             onClick={onClose}
           >
@@ -35,7 +37,7 @@ const FilterSidebar = ({
         </div>
 
         <div className="filter-section">
-          <h3>Category</h3>
+          <h3 style={{color:"#2AA1EC"}}>Category</h3>
 
           <label>
             <input
@@ -75,7 +77,7 @@ const FilterSidebar = ({
         </div>
 
         <div className="filter-section">
-          <h3>Sort By</h3>
+          <h3 style={{color:"#2AA1EC"}}>Sort By</h3>
 
           <label>
             <input

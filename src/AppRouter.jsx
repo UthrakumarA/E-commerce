@@ -5,9 +5,9 @@ import CartList from "./pages/CartList";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Help from "./pages/Help";
-import ProductDetails from "./pages/ProductDetails";
-import './index.css';
-import { useCart } from "./context/Cardcontext";
+import ProductDetails from "./component/ProductDetails";
+import './CSS/index.css';
+import { useCart } from "./component/Cardcontext";
 
 const Navbar=()=> {
   const {cartCount}=useCart();
@@ -19,7 +19,7 @@ const Navbar=()=> {
       <div className="nav-links">
         <span onClick={() => navigate("/")}>Home</span>
         <span onClick={() => navigate("/products")}>Products</span>
-        <span onClick={() => navigate("/cart")}>Cart List ({cartCount})</span>
+        <span onClick={() => navigate("/cart")}>Cart 🛒({cartCount})</span>
         <span onClick={() => navigate("/about")}>About</span>
         <span onClick={() => navigate("/contact")}>Contact</span>
         <span onClick={() => navigate("/help")}>Help</span>
@@ -32,7 +32,7 @@ const Navbar=()=> {
 const AppRouter=()=> {
   return (
     <>
-      <center><u><b><h1 className="logo">Welcome To Vicky Anna E-Commerce Website</h1></b></u></center>
+      <center><u style={{color:"#2AA1EC"}}><b><h1 className="logo" style={{color:"#2AA1EC"}}>Welcome To Vicky Anna E-Commerce Website</h1></b></u></center>
       
       <Navbar />
 

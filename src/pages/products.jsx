@@ -2,6 +2,7 @@ import { useState } from "react";
 import products from "../data/products";
 import ProductCard from "../component/ProductCard";
 import FilterSidebar from "../component/FilterSidebar";
+import "../CSS/product.css";
 
 const Products = () => {
   const [search, setSearch] = useState("");
@@ -79,7 +80,7 @@ const Products = () => {
     );
   }
 
-  const productsPerPage = 4;
+  const productsPerPage = 8;
 
   const lastIndex =
     currentPage * productsPerPage;
@@ -125,15 +126,9 @@ const Products = () => {
   return (
     <div className="products-page">
       <div className="search-container">
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search products..."
-          value={search}
+        <input className="search-input" type="text" placeholder="Search products..."value={search}
           onChange={(e) => {
-            setSearch(
-              e.target.value
-            );
+            setSearch(e.target.value);
             setCurrentPage(1);
           }}
         />

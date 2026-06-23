@@ -1,0 +1,104 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1999;
+}
+
+
+
+.filter-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 25%;
+  height: 100vh;
+  background-color: black;
+  color: #02F7D8;
+  z-index: 2000;
+  transition: 0.4s;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.filter-sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.filter-section {
+  margin-bottom: 25px;
+}
+
+.filter-section h3 {
+  margin-bottom: 10px;
+}
+
+.filter-section label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.apply-btn,
+.reset-btn {
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.apply-btn {
+  background:#2AA1EC;
+  color: white;
+}
+.apply-btn:hover{
+  background: #36034e;
+}
+
+.reset-btn {
+  background: #ddd;
+}
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+.page-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #36034e;
+  color:white;
+}
+
+.page-info {
+  color: white;
+  display: flex;
+  align-items: center;
+  background: none;
+  background-color: none;
+}
