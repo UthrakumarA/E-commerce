@@ -91,21 +91,18 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-<<<<<<< HEAD
+  
   background-color: #36034e;
   color:white;
 }
 
-=======
-  background-color: #2AA1EC;
-  color:white;
-}
+
 
 .page-btn:hover {
    box-shadow: 0 0 20px #2AA1EC;
 }
 
->>>>>>> 969637a (Changes the theme)
+
 .page-info {
   color: white;
   display: flex;
