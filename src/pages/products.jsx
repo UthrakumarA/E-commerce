@@ -2,7 +2,8 @@ import { useState } from "react";
 import products from "../data/products";
 import ProductCard from "../component/ProductCard";
 import FilterSidebar from "../component/FilterSidebar";
-import "../CSS/product.css";
+
+import "../CSS/index.css";
 
 const Products = () => {
   const [search, setSearch] = useState("");
