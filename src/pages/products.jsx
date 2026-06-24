@@ -2,7 +2,11 @@ import { useState } from "react";
 import products from "../data/products";
 import ProductCard from "../component/ProductCard";
 import FilterSidebar from "../component/FilterSidebar";
+<<<<<<< HEAD
 import "../CSS/product.css";
+=======
+import "../CSS/Product.css";
+>>>>>>> 969637a (Changes the theme)
 
 const Products = () => {
   const [search, setSearch] = useState("");
@@ -151,9 +155,7 @@ const Products = () => {
 
       <div className="grid">
         {currentProducts.length >
-        0 ? (
-          currentProducts.map(
-            (product) => (
+        0 ? (currentProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}

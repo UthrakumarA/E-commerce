@@ -40,18 +40,9 @@ const FilterSidebar = ({
           <h3 style={{color:"#2AA1EC"}}>Category</h3>
 
           <label>
-            <input
-              type="radio"
-              name="category"
-              value="All"
-              checked={
-                selectedCategory === "All"
-              }
-              onChange={(e) =>
-                setSelectedCategory(
-                  e.target.value
-                )
-              }
+            <input type="radio" name="category" value="All"
+              checked={selectedCategory === "All"}
+              onChange={(e) =>setSelectedCategory(e.target.value)}
             />
             All
           </label>

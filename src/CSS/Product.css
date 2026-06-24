@@ -29,7 +29,11 @@
 }
 
 .product-count {
+<<<<<<< HEAD
   color: white;
+=======
+  color: #00c8ff;
+>>>>>>> 969637a (Changes the theme)
   margin-bottom: 20px;
 }
 

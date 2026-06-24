@@ -12,7 +12,12 @@ const ProductCard=({ product })=>
       
       <p>₹{product.price}</p>
 
-      <button onClick={(e) => {e.stopPropagation(); addToCart(product);}}>Add To Cart</button>
+      <button onClick={(e) => {e.stopPropagation(); addToCart(product);}}>Add To Cart
+        <svg className="border-svg">
+        <rect className="runner runner1" x="1" y="1" width="98%" height="95%" rx="10" />
+        <rect className="runner runner2" x="1" y="1" width="98%" height="95%" rx="10" />
+        </svg>
+      </button>
     </div>
   );
 }
