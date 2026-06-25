@@ -2,7 +2,7 @@
   width: 90%;
   max-width: 1200px;
   margin: 40px auto;
-  background: black;
+  background-color: black;
   border-radius: 15px;
   padding: 30px;
   display: flex;
@@ -13,10 +13,16 @@
 }
 
 .details-image {
-  width: 400px;
-  max-width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 450px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.details-image:hover {
+  transform: scale(1.05);
 }
 
 .details-content {
@@ -25,6 +31,7 @@
 
 .details-content h1 {
   margin-bottom: 15px;
+  color:#ffffff;
 }
 
 .details-content h2 {
@@ -52,14 +59,135 @@
   background: #5833f5;
 }
 
+.rating {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #f5a623;
+}
+
+.rating p {
+  display: inline;
+  margin-left: 10px;
+  color: #f5a623;
+}
+
+.category {
+  margin: 12px 0;
+  font-size: 17px;
+}
+
+.stock {
+  color: #02f737;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.description {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #12b9ec;
+}
+
+.related-section {
+  width: 100%;
+}
+
+.related-title {
+  text-align: center;
+  color: #00f5d4;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
 @media (max-width: 768px) {
 
   .details-page {
     flex-direction: column;
     text-align: center;
+    width: 95%;
+    padding: 20px;
+    gap: 25px;
   }
 
   .details-image {
     width: 100%;
+    max-width: 350px;
+    height: 250px;
+    margin: auto;
+  }
+
+  .details-content h1 {
+    font-size: 2rem;
+  }
+
+  .details-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .details-content p {
+    font-size: 16px;
+  }
+
+  .details-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .details-page {
+    width: 98%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .details-image {
+    max-width: 280px;
+    height: 220px;
+  }
+
+  .details-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .details-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .details-content p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .details-btn {
+    width: 100%;
+  }
+
+  .related-title {
+    font-size: 1.5rem;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

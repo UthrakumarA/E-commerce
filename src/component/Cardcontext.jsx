@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import toast from "react-hot-toast";
 
 const CartContext = createContext();
 
@@ -25,8 +26,9 @@ export const CartProvider = ({ children }) => {
       (item) => item.id === product.id
     );
 
-    if (alreadyExists) {
-      alert("Product already in cart");
+   if (alreadyExists) 
+    {
+      toast.error("Product already in cart");
       return;
     }
 
@@ -34,6 +36,8 @@ export const CartProvider = ({ children }) => {
       ...cartItems,
       product
     ]);
+
+    toast.success(`${product.title} added to cart`);
   };
 
   const removeFromCart = (id) => {
@@ -44,6 +48,8 @@ export const CartProvider = ({ children }) => {
       );
 
     setCartItems(updatedCart);
+
+    toast.success("Product removed from cart");
   };
 
   const cartCount = cartItems.length;

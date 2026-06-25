@@ -144,11 +144,11 @@ const Products = () => {
         </button>
       </div>
 
-      <p className="product-count">
-        Showing {
+      <b><p className="product-count">
+        Total Product : {
           sortedProducts.length
-        } Products
-      </p>
+        } 
+      </p></b>
 
       <div className="grid">
         {currentProducts.length >

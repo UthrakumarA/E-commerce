@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useCart } from "./Cardcontext";
+import { useCart } from "../component/Cardcontext";
 const ProductCard=({ product })=>
 {
   const {addToCart}= useCart();
@@ -9,8 +9,8 @@ const ProductCard=({ product })=>
       <img src={product.image} alt={product.title} loading="lazy"/>
 
       <h3>{product.title}</h3>
-      
-      <p>₹{product.price}</p>
+      <p>{product.category}</p><br />
+      <p style={{color:"#00c8ff"}}>₹{product.price}</p>
 
       <button onClick={(e) => {e.stopPropagation(); addToCart(product);}}>Add To Cart
         <svg className="border-svg">

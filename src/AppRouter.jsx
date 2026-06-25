@@ -1,4 +1,5 @@
 import {Routes, Route, useNavigate } from "react-router-dom";
+import { useCart } from "./component/Cardcontext";
 import Home from "./pages/Home";
 import Products from "./pages/products";
 import CartList from "./pages/CartList";
@@ -7,8 +8,7 @@ import Contact from "./pages/Contact";
 import Help from "./pages/Help";
 import ProductDetails from "./component/ProductDetails";
 import './CSS/index.css';
-import { useCart } from "./component/Cardcontext";
-
+ 
 const Navbar=()=> {
   const {cartCount}=useCart();
   const navigate = useNavigate();
@@ -32,8 +32,7 @@ const Navbar=()=> {
 const AppRouter=()=> {
   return (
     <>
-      <center><u style={{color:"#2AA1EC"}}><b><h1 className="logo" style={{color:"#2AA1EC"}}>Welcome To Vicky Anna E-Commerce Website</h1></b></u></center>
-      
+       
       <Navbar />
 
       <Routes>

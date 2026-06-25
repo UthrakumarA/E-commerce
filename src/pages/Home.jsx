@@ -5,6 +5,8 @@ import "../CSS/index.css";
 function Home() {
   return (
     <div>
+      <center><u style={{color:"#2AA1EC"}}><b><h1 className="logo" style={{color:"#2AA1EC"}}>
+          Welcome To Vicky Anna E-Commerce Website</h1></b></u></center><br />
       <section className="hero">
         <h1>Welcome To ShopSphere</h1>
 

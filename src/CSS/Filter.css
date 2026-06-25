@@ -4,9 +4,7 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 1999;
 }
-
-
-
+ 
 .filter-sidebar {
   position: fixed;
   top: 0;
@@ -76,9 +74,7 @@
 .reset-btn {
   background: #ddd;
 }
-
-
-
+ 
 .pagination {
   display: flex;
   justify-content: center;
@@ -95,9 +91,7 @@
   background-color: #36034e;
   color:white;
 }
-
-
-
+ 
 .page-btn:hover {
    box-shadow: 0 0 20px #2AA1EC;
 }
@@ -109,4 +103,31 @@
   align-items: center;
   background: none;
   background-color: none;
+}
+
+.page-info:hover{
+  background: none;
+  box-shadow: none;
+  color:#ffffff;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 250px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 250px;
+    justify-content: center;
+  }
 }
