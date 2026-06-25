@@ -271,12 +271,21 @@ span:hover {
   }
 
   .nav-links {
-    gap: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    overflow-x: auto;
+    scrollbar-width: none;
   }
 
-  span {
-    padding: 7px 12px;
-    font-size: 14px;
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links span {
+    font-size: 11px;
+    padding: 6px 10px;
+    white-space: nowrap;
   }
 
   .grid {
@@ -309,7 +318,7 @@ span:hover {
 
   span {
     padding: 6px 10px;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .hero {
@@ -325,10 +334,17 @@ span:hover {
   }
 
   .grid {
+    display: grid;
     grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
+
+  .card {
+    width: 280px;
+    height:390px;
   }
 
   .card img {
-    height: 180px;
+    height: 200px;
   }
-} 
+}

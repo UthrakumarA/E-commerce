@@ -111,10 +111,30 @@
   color:#ffffff;
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 250px);
-    justify-content: center;
+@media (max-width: 768px) {
+
+  .filter-sidebar {
+    width: 95%;
+    max-width: 250px;
+    padding: 20px;
+  }
+
+  .filter-section h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .filter-section label {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .sidebar-header h2 {
+    font-size: 32px;
+  }
+
+  .close-btn {
+    font-size: 28px;
   }
 }
 

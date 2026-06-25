@@ -25,7 +25,9 @@ const { addToCart } = useCart();
 
 return (
   <>
+    <center><h2><u>Product Detail view</u></h2></center>
     <div className="details-page">
+     
 
       <img className="details-image"
         src={product.image}

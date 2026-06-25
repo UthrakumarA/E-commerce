@@ -19,7 +19,7 @@ const Navbar=()=> {
       <div className="nav-links">
         <span onClick={() => navigate("/")}>Home</span>
         <span onClick={() => navigate("/products")}>Products</span>
-        <span onClick={() => navigate("/cart")}>Cart 🛒({cartCount})</span>
+        <span onClick={() => navigate("/cart")}>🛒({cartCount})</span>
         <span onClick={() => navigate("/about")}>About</span>
         <span onClick={() => navigate("/contact")}>Contact</span>
         <span onClick={() => navigate("/help")}>Help</span>
