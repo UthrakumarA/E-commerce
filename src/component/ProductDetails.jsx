@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 import products from "../data/products";
 import ProductCard from "./ProductCard";
 import { useCart } from "./Cardcontext";
@@ -18,6 +19,28 @@ const relatedProducts = products.filter(
 ).slice(0, 4);
 
 const { addToCart } = useCart();
+
+useEffect(() => {
+  if (!product) return;
+
+  let recentProducts = JSON.parse(localStorage.getItem("recentProducts")) || [];
+
+  // Remove duplicate if it already exists
+  recentProducts = recentProducts.filter(
+    (item) => item.id !== product.id
+  );
+
+  // Add current product to the beginning
+  recentProducts.unshift(product);
+
+  // Keep only the latest 4 products
+  recentProducts = recentProducts.slice(0, 4);
+
+  localStorage.setItem(
+    "recentProducts",
+    JSON.stringify(recentProducts)
+  );
+}, [product]);
 
   if (!product) {
     return <h2>Product Not Found</h2>;

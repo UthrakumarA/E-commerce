@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Help from "./pages/Help";
 import ProductDetails from "./component/ProductDetails";
+import ScrollToTop from "./component/ScrollToTop";
 import './CSS/index.css';
  
 const Navbar=()=> {
@@ -34,6 +35,8 @@ const AppRouter=()=> {
     <>
        
       <Navbar />
+
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Home />} />
