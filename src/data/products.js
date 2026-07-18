@@ -31,15 +31,16 @@ const products = [
     description: "Powerful for gaming and Graphics",
     image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=60"
   },
+
   {
     id: 4,
-    title: "Gaming Mouse",
-    price: 1499,
-    rating: 4.1,
+    title: "T-Shirt",
+    price: 799,
+    rating: 3.8,
     stock: true,
-    category: "Electronics",
-    description: "Portable and easily usable mouse",
-    image:"https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=60"
+    category: "Fashion",
+    description: "Comfortable cotton shirt",
+    image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=600&q=60"
   },
 
   {
@@ -66,13 +67,13 @@ const products = [
 
   {
     id: 7,
-    title: "T-Shirt",
-    price: 799,
-    rating: 3.8,
+    title: "Gaming Mouse",
+    price: 1499,
+    rating: 4.1,
     stock: true,
-    category: "Fashion",
-    description: "Comfortable cotton shirt",
-    image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=600&q=60"
+    category: "Electronics",
+    description: "Portable and easily usable mouse",
+    image:"https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=60"
   },
 
   {

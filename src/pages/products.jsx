@@ -1,126 +1,70 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import products from "../data/products";
 import ProductCard from "../component/ProductCard";
 import FilterSidebar from "../component/FilterSidebar";
-
-import "../CSS/index.css";
+import "../CSS/Product.css";
 
 const Products = () => {
   const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] =
-    useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedSort, setSelectedSort] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeSort, setActiveSort] = useState("");
 
-  const [sidebarOpen, setSidebarOpen] =
-    useState(false);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [currentPage]);
 
-  const [selectedCategory, setSelectedCategory] =
-    useState("All");
+  const categories = [...new Set(products.map((product) => product.category)),];
 
-  const [selectedSort, setSelectedSort] =
-    useState("");
+  const filteredProducts = products.filter((product) =>{ 
+    const matchesSearch =product.title.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = activeCategory === "All"? true: product.category === activeCategory;
+    return (matchesSearch &&matchesCategory);});
 
-  const [activeCategory, setActiveCategory] =
-    useState("All");
-
-  const [activeSort, setActiveSort] =
-    useState("");
-
-  const categories = [
-    ...new Set(
-      products.map(
-        (product) => product.category
-      )
-    ),
-  ];
-
-  const filteredProducts = products.filter(
-    (product) => {
-      const matchesSearch =
-        product.title
-          .toLowerCase()
-          .includes(search.toLowerCase());
-
-      const matchesCategory =
-        activeCategory === "All"
-          ? true
-          : product.category ===
-            activeCategory;
-
-      return (
-        matchesSearch &&
-        matchesCategory
-      );
-    }
-  );
-
-  const sortedProducts = [
-    ...filteredProducts,
-  ];
+  const sortedProducts = [...filteredProducts,];
 
   if (activeSort === "lowToHigh") {
-    sortedProducts.sort(
-      (a, b) => a.price - b.price
-    );
+    sortedProducts.sort((a, b) => a.price - b.price);
   }
 
   if (activeSort === "highToLow") {
-    sortedProducts.sort(
-      (a, b) => b.price - a.price
-    );
+    sortedProducts.sort((a, b) => b.price - a.price);
   }
 
-  if (activeSort === "az") {
-    sortedProducts.sort((a, b) =>
-      a.title.localeCompare(b.title)
-    );
+  if (activeSort === "az") {sortedProducts.sort((a, b) =>
+    a.title.localeCompare(b.title));
   }
 
-  if (activeSort === "za") {
-    sortedProducts.sort((a, b) =>
-      b.title.localeCompare(a.title)
-    );
+  if (activeSort === "za") {sortedProducts.sort((a, b) =>
+    b.title.localeCompare(a.title));
   }
 
   const productsPerPage = 8;
-
-  const lastIndex =
-    currentPage * productsPerPage;
-
-  const firstIndex =
-    lastIndex - productsPerPage;
-
-  const currentProducts =
-    sortedProducts.slice(
-      firstIndex,
-      lastIndex
-    );
-
-  const totalPages = Math.ceil(
-    sortedProducts.length /
-      productsPerPage
-  );
+  const lastIndex = currentPage * productsPerPage;
+  const firstIndex = lastIndex - productsPerPage;
+  const currentProducts = sortedProducts.slice(firstIndex,lastIndex);
+  const totalPages = Math.ceil(sortedProducts.length /productsPerPage);
 
   const applyFilters = () => {
-    setActiveCategory(
-      selectedCategory
-    );
-
+    setActiveCategory(selectedCategory);
     setActiveSort(selectedSort);
-
     setCurrentPage(1);
-
     setSidebarOpen(false);
   };
 
   const resetFilters = () => {
     setSelectedCategory("All");
     setSelectedSort("");
-
     setActiveCategory("All");
     setActiveSort("");
-
     setCurrentPage(1);
-
     setSidebarOpen(false);
   };
 
@@ -128,75 +72,49 @@ const Products = () => {
     <div className="products-page">
       <div className="search-container">
         <input className="search-input" type="text" placeholder="Search products..."value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setCurrentPage(1);
-          }}
-        />
+          onChange={(e) => { setSearch(e.target.value);setCurrentPage(1);}}/>
 
-        <button
-          className="filter-toggle"
-          onClick={() =>
-            setSidebarOpen(true)
-          }
-        >
+        <button className="filter-toggle" onClick={() =>setSidebarOpen(true)}>
           ☰
         </button>
       </div>
 
-      <b><p className="product-count">
-        Total Product : {
-          sortedProducts.length
-        } 
-      </p></b>
+      <b><p className="product-count">Total Product : {sortedProducts.length}</p></b>
 
       <div className="grid">
-        {currentProducts.length >
-        0 ? (currentProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
-            )
-          )
+        {currentProducts.length > 0 ? (currentProducts.map((product) => (
+        <ProductCard key={product.id} product={product}/>))
         ) : (
-          <h2>
-            No Products Found
-          </h2>
-        )}
+        <h2>No Products Found</h2>)}
       </div>
+      <br />
 
       <div className="pagination">
-        <button className="page-btn" disabled={currentPage === 1}onClick={() =>setCurrentPage(currentPage - 1)}>
-        Previous
+        <button className="page-btn" disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
+          Previous
         </button>
-
+        
         <span className="page-info">
-          Page {currentPage} of{" "}
-          {totalPages}
+          Page {currentPage} of {totalPages}
         </span>
 
-        <button className="page-btn"disabled={currentPage ===totalPages}onClick={() =>setCurrentPage(currentPage + 1)}>
-        Next
+        <button className="page-btn" disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>
+          Next
         </button>
       </div>
 
       <FilterSidebar
         isOpen={sidebarOpen}
-        onClose={() =>
-          setSidebarOpen(false)
-        }
+        onClose={() =>setSidebarOpen(false)}
+
         categories={categories}
-        selectedCategory={
-          selectedCategory
-        }
-        setSelectedCategory={
-          setSelectedCategory
-        }
+        selectedCategory={selectedCategory}
+
+        setSelectedCategory={setSelectedCategory}
+
         selectedSort={selectedSort}
-        setSelectedSort={
-          setSelectedSort
-        }
+        setSelectedSort={setSelectedSort}
+
         applyFilters={applyFilters}
         resetFilters={resetFilters}
       />

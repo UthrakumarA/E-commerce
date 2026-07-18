@@ -1,4 +1,4 @@
-import { useCart } from "../component/Cardcontext";
+import { useCart } from "../context/CardContext";
 import "../CSS/CartList.css";
 
 const CartList = () => {
