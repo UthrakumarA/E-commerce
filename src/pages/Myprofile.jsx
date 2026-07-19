@@ -76,21 +76,22 @@ function MyProfile() {
 };
 
     const handleSave = () => {
-        if (!hasChanges()) {
-            showInfo("No changes to save.");
-            return;
-        }
-        
-        const updatedUser = {
-            ...loggedInUser,
-            name,
-            password,
-            profileImage
-        };
 
-    localStorage.setItem("loggedInUser",JSON.stringify(updatedUser));
+    if (!hasChanges()) {
+        showInfo("No changes to save.");
+        return;
+    }
 
-    const users =vJSON.parse(localStorage.getItem("users")) || [];
+    const updatedUser = {
+        ...loggedInUser,
+        name,
+        password,
+        profileImage
+    };
+
+    localStorage.setItem("loggedInUser", JSON.stringify(updatedUser));
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
     const updatedUsers = users.map((user) => {
         if (user.email === loggedInUser.email) {
@@ -99,7 +100,7 @@ function MyProfile() {
         return user;
     });
 
-    localStorage.setItem("users",JSON.stringify(updatedUsers));
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
 
     setEditingName(false);
     setEditingPassword(false);
