@@ -150,7 +150,7 @@ return (
     <div className="floating-circle circle3"></div>
     <div className="auth-wrapper">
         <div className="auth-left slide-left">
-        <div className="auth-left">
+    
             <div className="brand-logo">🛒 ShopSphere</div>
             
             <h1>Join ShopSphere</h1>
@@ -167,7 +167,7 @@ return (
             </div>
             <p style={{color:"#FFFFFF"}}>10,000+ Happy Customers⭐⭐⭐⭐⭐<br/><br />
             Trusted by thousands</p>
-        </div>
+       
         </div>
         
         <div className="auth-right slide-right">

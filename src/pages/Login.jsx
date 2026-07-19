@@ -93,7 +93,7 @@ return (
     <div className="floating-circle circle3"></div>
     <div className="auth-wrapper">
         <div className="auth-left slide-left">
-        <div className="auth-left">
+        
             <div className="brand-logo">🛒 ShopSphere</div>
 
             <h1>Welcome Back!</h1>
@@ -109,7 +109,6 @@ return (
                 <div>✔ Secure Payments</div>
                 <div>✔ 24/7 Support</div>
             </div>
-        </div>
         </div>
         
         <div className="auth-right slide-right">

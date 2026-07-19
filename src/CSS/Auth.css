@@ -453,99 +453,7 @@
     50%{
       transform:translate(25px,-25px);
     }
-}
-
-/* MOBILE*/
-
-@media (max-width:768px){
-  
-  .auth-container{
-    padding:20px;
-    min-height:100vh;
-  }
-
-  .auth-left{
-    display:none;
-  }
-
-  .auth-wrapper{
-    width:100%;
-    max-width:450px;
-    margin:auto;
-    display:block;
-  }
-
-  .auth-right{
-    width:100%;
-    padding:35px 25px;
-  }
-
-  .mobile-brand{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    margin-bottom:25px;
-    font-size:32px;
-    font-weight:700;
-    color:#00c8ff;
-  }
-
-  .mobile-brand-icon{
-    font-size:36px;
-  }
-  
-  .auth-title{
-    justify-content:center;
-  }
-  
-  .auth-title .title-icon{
-    display:none;
-  }
-  
-  .auth-card{
-    transition:.35s;
-}
-  .auth-card:hover{
-    transform:translateY(-4px);
-}
-
-  .auth-card h1{
-    font-size:28px;
-  }
-
-  .auth-left{
-    display: hidden;
-  }
-
-}
-
-@media (max-width:480px){
-
-  .auth-card{
-      padding:20px;
-      border-radius:14px;
-  }
-
-  .auth-card h1{
-      font-size:24px;
-  }
-
-  .auth-subtitle{
-      font-size:14px;
-  }
-
-  .auth-card input{
-      height:46px;
-      font-size:15px;
-  }
-
-  .auth-btn{
-      height:46px;
-      font-size:16px;
-  }
-
-}
+} 
 
 .success-overlay{
     position:fixed;
@@ -625,10 +533,95 @@
       transform:translateX(0);
     }
 }
-
-
+ 
 .shake-input input{
     color:#ff4d4f;;
     border-color:#ff4d4f;
     box-shadow:0 0 10px rgba(255,77,79,.35);
 }
+ 
+
+@media (max-width:768px){
+  
+  .auth-container{
+    padding:20px;
+    min-height:100vh;
+  }
+
+  .auth-left{
+      display:none !important;
+    }
+
+  .auth-wrapper{
+    display:block; 
+    max-width:430px;
+    grid-template-columns:1fr;
+  }
+
+  .auth-right{
+    width:100%;
+    padding:35px 25px;
+  }
+
+  .mobile-brand{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-bottom:25px;
+    font-size:32px;
+    font-weight:700;
+    color:#00c8ff;
+  }
+
+  .mobile-brand-icon{
+    font-size:36px;
+  }
+  
+  .auth-title{
+    justify-content:center;
+  }
+  
+  .auth-title .title-icon{
+    display:none;
+  }
+  
+  .auth-card{
+    transition:.35s;
+}
+  .auth-card:hover{
+    transform:translateY(-4px);
+}
+
+  .auth-card h1{
+    font-size:28px;
+  }
+} 
+
+@media (max-width:480px){
+
+  .auth-card{
+      padding:20px;
+      border-radius:14px;
+  }
+
+  .auth-card h1{
+      font-size:24px;
+  }
+
+  .auth-subtitle{
+      font-size:14px;
+  }
+
+  .auth-card input{
+      height:46px;
+      font-size:15px;
+  }
+
+  .auth-btn{
+      height:46px;
+      font-size:16px;
+  }
+
+}
+
