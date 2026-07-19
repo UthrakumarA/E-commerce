@@ -24,7 +24,7 @@ function Wishlist() {
         <div className="wishlist-empty">
             <h2>💔 Your wishlist is empty</h2>
             <p>Start adding your favourite products.</p>
-            <button className="continue-shopping-btn"onClick={() => navigate("/products")}>
+            <button className="continue-shopping-btn"onClick={() => navigate("/Products")}>
                 🛍 Continue Shopping
             </button>
         </div>

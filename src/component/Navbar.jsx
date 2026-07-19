@@ -104,7 +104,7 @@ const Navbar=()=> {
           }
           }}>Home
         </span>
-        <span className="nav-link" onClick={() => navigate("/products")}>Products</span>
+        <span className="nav-link" onClick={() => navigate("/Products")}>Products</span>
         <span className="nav-link" onClick={() => navigate("/cart")}>Cart ({cartCount})</span>
         <span className="nav-link" onClick={handleRecentClick}>Recent</span>
         <span className="nav-link" onClick={() => {navigate("/orders");}}>Orders</span>

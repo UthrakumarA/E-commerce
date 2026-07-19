@@ -49,7 +49,7 @@ const Footer = () => {
                     <h3>Home</h3>
                     <p>Welcome Back<br />Start your shopping journey.</p>
                 </div>
-                <div className="footer-card" onClick={() => navigate("/products")}>
+                <div className="footer-card" onClick={() => navigate("/Products")}>
                     <div className="footer-icon"> <MdShoppingBag /></div>
                     <h3>Products</h3>
                     <p>Explore<br />Browse our latest collection.</p>
