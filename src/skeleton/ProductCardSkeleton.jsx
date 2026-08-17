@@ -1,5 +1,5 @@
 import "../CSS/Product.css";
-import "../CSS/skeleton.css";
+import "../CSS/Skeleton.css";
 
 function ProductCardSkeleton() {
     return (

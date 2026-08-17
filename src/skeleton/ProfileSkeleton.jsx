@@ -1,4 +1,4 @@
-import "../CSS/profile.css";
+import "../CSS/Profile.css";
 import "../CSS/Skeleton.css";
 
 function ProfileSkeleton() {
