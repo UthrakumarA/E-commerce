@@ -1,0 +1,79 @@
+.notfound-container{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.notfound-card{
+    max-width:550px;
+    width:100%;
+    text-align:center;
+    padding:45px 35px;
+}
+
+.notfound-icon{
+    font-size:60px;
+    color:#FF0000;
+    margin-bottom:20px;
+}
+
+.notfound-code{
+    font-size:110px;
+    color:#2AA1EC;
+    margin:0;
+    line-height:1;
+}
+
+.notfound-title{
+    margin-top:20px;
+    color:#FF0000;
+}
+
+.notfound-text{
+    color:#b7c0d1;
+    margin:20px auto;
+    max-width:420px;
+    line-height:1.7;
+}
+
+.notfound-btn{
+    margin-top:15px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:13px 24px;
+    border:none;
+    border-radius:10px;
+    background:#2AA1EC;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+    font-size:15px;
+}
+
+.notfound-btn:hover{
+    transform:translateY(-3px);
+    background:#1b8ddb;
+}
+
+body[data-theme="light"] .notfound-card{
+    background:#ffffff;
+}
+
+body[data-theme="light"] .notfound-text{
+    color:#555;
+}
+
+@media(max-width:768px){
+    .notfound-card{
+        padding:35px 20px;
+    }
+    .notfound-code{
+        font-size:80px;
+    }
+    .notfound-icon{
+        font-size:45px;
+    }
+}

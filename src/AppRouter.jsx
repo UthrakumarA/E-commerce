@@ -1,17 +1,20 @@
 import {Routes, Route, useLocation} from "react-router-dom";
-import Navbar from "./component/Navbar";
-import Login from "./pages/Login";
-import Register from "./pages/Register"
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import CartList from "./pages/CartList";
-import Orders from "./pages/Orders";
-import ProductDetails from "./component/ProductDetails";
-import ScrollToTop from "./component/ScrollToTop";
-import ProtectedRoute from "./component/ProtectedRoute";
-import MyProfile from "./pages/Myprofile";
-import Wishlist from "./pages/Wishlist";
-import CustomerSupport from "./component/CustomerSupport";
+import { lazy, Suspense } from "react";
+import PageLoader from "./component/PageLoader";
+const Navbar = lazy(() => import("./component/Navbar"));  
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import( "./pages/Register"));
+const Home = lazy(() => import( "./pages/Home"));
+const Products = lazy(() => import( "./pages/Products"));
+const CartList = lazy(() => import( "./pages/CartList"));
+const Orders = lazy(() => import( "./pages/Orders"));
+const ProductDetails = lazy(() => import( "./component/ProductDetails"));
+const ScrollToTop = lazy(() => import( "./component/ScrollToTop"));
+const ProtectedRoute = lazy(() => import( "./component/ProtectedRoute"));
+const MyProfile = lazy(() => import( "./pages/Myprofile"));
+const Wishlist = lazy(() => import( "./pages/Wishlist"));
+const CustomerSupport = lazy(() => import( "./help-support/CustomerSupport"));
+const NotFound = lazy(() => import( "./pages/NotFound"));
 import './CSS/index.css';
  
 
@@ -25,6 +28,7 @@ const AppRouter = () => {
 
       <ScrollToTop />
 
+      <Suspense fallback={<PageLoader />}>
       <Routes>
         <Route path="/" element={ <Login />}/>
         <Route path="/register" element={ <Register />}/>
@@ -36,7 +40,9 @@ const AppRouter = () => {
         <Route path="/wishlist" element={<ProtectedRoute> <Wishlist/> </ProtectedRoute>}/>
         <Route path="/orders" element={<ProtectedRoute> <Orders/> </ProtectedRoute>}/>
         <Route path="/customer-support" element={<ProtectedRoute> <CustomerSupport/> </ProtectedRoute>}/>
+        <Route path="/*" element={<ProtectedRoute> <NotFound /> </ProtectedRoute>} />
       </Routes>
+      </Suspense>
     </>
   );
 }

@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useState, useEffect,useRef} from "react";
 import toast from "react-hot-toast";
 import defaultProfile from "../assets/default-profile.png";
+import ProfileSkeleton from "../skeleton/ProfileSkeleton";
 import "../CSS/Profile.css";
 
 
@@ -18,6 +19,8 @@ function MyProfile() {
     const [editingPassword, setEditingPassword] = useState(false);
     const [password, setPassword] = useState(loggedInUser.password);
     const [showPassword, setShowPassword] = useState(false);
+
+    const [loading, setLoading] = useState(true);
 
     const fileInputRef = useRef(null);
     
@@ -130,17 +133,24 @@ const handleDiscard = () => {
     showInfo("Changes discarded.");
 };
 
+useEffect(() => {
+    const timer = setTimeout(() => {
+        setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+}, []);
+
+if (loading) {
+    return <ProfileSkeleton />;
+}
+
 return(
 
-<div className="profile-container">
-    
-    <div className="profile-card">
-        
-        <h1 className="profile-title">👤 My Profile</h1>
-        
+<div className="profile-container">    
+   <div className="profile-card">
+     <h1 className="profile-title">👤 My Profile</h1>  
         <div className="profile-image-section">
-            
-            <img src={profileImage} alt="Profile" className="profile-image"/>
+            <img src={profileImage} alt="Profile" className="profile-image"/> 
             <input type="file" ref={fileInputRef} accept="image/*" style={{ display: "none" }} onChange={handleImageChange}/>
             
             <div className="image-buttons">
@@ -169,24 +179,18 @@ return(
     ) : (
 
         <div className="edit-section">
-
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="edit-input" autoFocus/>
-
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="edit-input" autoFocus/> 
                 <button className="mini-cancel" onClick={() => {
-                        setName(loggedInUser.name);
-                        setEditingName(false);
+                    setName(loggedInUser.name);
+                    setEditingName(false);
                     }}>
                     ✖
                 </button>
-
-        </div>
-
+        </div> 
     )}
-
-</div>
-        <div className="info-row">
-
-            <h3>Email</h3>
+    </div>
+    <div className="info-row">
+        <h3>Email</h3>
 
             <div className="info-value">
                 <span>{loggedInUser.email}</span>

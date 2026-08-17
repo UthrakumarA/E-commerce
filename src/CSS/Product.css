@@ -207,6 +207,40 @@
   box-shadow: 0 0 10px #00f5d4;
 }
 
+.skeleton-image{
+  width:100%;
+  height:180px;
+  border-radius:12px;
+  margin-bottom:18px;
+}
+
+.skeleton-title{
+  width:80%;
+  height:20px;
+  margin:10px auto;
+
+}
+
+.skeleton-category{
+  width:55%;
+  height:16px;
+  margin:15px auto;
+
+}
+
+.skeleton-price{
+  width:35%;
+  height:18px;
+  margin:18px auto;
+
+}
+
+.skeleton-button{
+  width:100%;
+  height:46px;
+  margin-top:25px;
+  border-radius:10px;
+}
 
 @media (max-width: 1024px) {
   .grid {

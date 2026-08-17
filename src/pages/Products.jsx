@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import products from "../data/products";
 import ProductCard from "../component/ProductCard";
 import FilterSidebar from "../component/FilterSidebar";
+import ProductCardSkeleton from "../skeleton/ProductCardSkeleton";
 import "../CSS/Product.css";
 
 const Products = () => {
@@ -12,6 +13,7 @@ const Products = () => {
   const [selectedSort, setSelectedSort] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeSort, setActiveSort] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo({
@@ -20,6 +22,15 @@ const Products = () => {
       behavior: "instant",
     });
   }, [currentPage]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+
+}, []);
 
   const categories = [...new Set(products.map((product) => product.category)),];
 
@@ -82,11 +93,18 @@ const Products = () => {
       <b><p className="product-count">Total Product : {sortedProducts.length}</p></b>
 
       <div className="grid">
-        {currentProducts.length > 0 ? (currentProducts.map((product) => (
-        <ProductCard key={product.id} product={product}/>))
-        ) : (
-        <h2>No Products Found</h2>)}
-      </div>
+        {loading ? (Array.from({ length: 8 }).map((_, index) => (<ProductCardSkeleton key={index} />))) 
+        : currentProducts.length > 0 ? (
+          currentProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))
+       ) : (
+       <h2>No Products Found</h2>
+       )}
+       </div>
       <br />
 
       <div className="pagination">

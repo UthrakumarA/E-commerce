@@ -51,21 +51,7 @@ h2{
   font-size: 18px;
   margin-bottom: 20px;
   line-height: 1.6;
-}
-
-.details-btn {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #6c47ff;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.details-btn:hover {
-  background: #5833f5;
-}
+} 
 
 .rating {
   margin: 10px 0;
@@ -144,12 +130,7 @@ h2{
   .details-content p {
     font-size: 16px;
   }
-
-  .details-btn {
-    width: 100%;
-    max-width: 250px;
-  }
-
+ 
   .related-grid {
     grid-template-columns: repeat(2, 1fr);
     padding-left: 10px;
@@ -183,11 +164,7 @@ h2{
     font-size: 15px;
     line-height: 1.5;
   }
-
-  .details-btn {
-    width: 100%;
-  }
-
+   
   .related-title {
     font-size: 1.5rem;
   }
